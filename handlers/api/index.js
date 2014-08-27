@@ -1,5 +1,5 @@
 exports = module.exports = function(services) {
     return {
-        message: require('./message')(services.message)
+        message: require('./message')(services)
     };
 };
