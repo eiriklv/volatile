@@ -14,6 +14,9 @@ var ReactAsync = require('react-async');
 var Head = require('./modules/components/head');
 var InputForm = require('./modules/components/input-form');
 var Header = require('./modules/components/header');
+var SocialBox = require('./modules/components/social-box');
+var Faq = require('./modules/components/faq');
+var Github = require('./modules/components/github');
 
 // Main page component (this is asyncronous)
 var Landing = React.createClass({
@@ -28,12 +31,15 @@ var Landing = React.createClass({
             <html>
                 <Head title={this.state.title} description={this.state.description}></Head>
                 <body id="landing">
+                    <Github />
                     <div className="container">
                         <Header title={this.state.title} />
                         <div className="jumbotron text-center">
                             <p>Your message will self destruct as soon as it is opened by the receiver, or within 24h if not opened.</p>
                             <InputForm />
                         </div>
+                        <SocialBox />
+                        <Faq />
                     </div>
                 </body>
             </html>

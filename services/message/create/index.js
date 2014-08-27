@@ -9,7 +9,10 @@ exports = module.exports = function(Message, helpers, config) {
         message.save(function(err, product) {
             if (err || !product.hash) return callback(err ? err : 'no hash returned');
 
-            var returnUrl = 'https://' + config.get('server.domain') + '/' + product.hash;
+            var protocol = 'http://';
+            if ('production' == config.get('env')) protocol = 'https://';
+
+            var returnUrl = protocol + config.get('server.domain') + '/' + product.hash;
             callback(null, returnUrl);
         });
     };
