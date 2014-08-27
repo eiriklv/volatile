@@ -30,7 +30,17 @@
     "node-jsx": "0.11.0",
     "react-bootstrap": "^0.11.1",
     "fibers": "~1.0.1",
-    "marked": "~0.3.2"
+    "marked": "~0.3.2",
+    "browserify": "~4.1.6",
+    "vinyl-source-stream": "~0.1.1",
+    "gulp": "~3.6.2",
+    "gulp-stylus": "~1.0.2",
+    "gulp-notify": "~1.3.1",
+    "gulp-nodemon": "~1.0.4",
+    "nib": "~1.0.2",
+    "envify": "~1.2.1",
+    "reactify": "0.14.x",
+    "jest-cli": "^0.1.18"
   },
   "devDependencies": {
     "browserify": "~4.1.6",
@@ -52,7 +62,8 @@
   },
   "scripts": {
     "test": "jest",
-    "develop": "sh dev.sh"
+    "postinstall": "gulp build",
+    "start": "node app"
   },
   "author": "Eirik Vullum <eirik@evconsult.no>"
 }
