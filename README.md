@@ -15,10 +15,9 @@ Pass information that evaporates when accessed
  * [envify](http://github.com/hughsk/envify/)
  * [reactify](https://github.com/andreypopp/reactify)
 * [react](http://facebook.github.io/react/)
-* [sass](http://sass-lang.com/)
+* [stylus](http://learnboost.github.io/stylus/)
 * [bootstrap](http://getbootstrap.com/)
 * [fontawesome](http://fortawesome.github.io/Font-Awesome/)
-* [jquery](http://www.jquery.com/)
 
 #### Testing:
 * [jest](http://facebook.github.io/jest/)
@@ -41,6 +40,8 @@ Pass information that evaporates when accessed
  * example: `3000`
 * `DEBUG` - Debug output (* for all) (optional)
  * example: `*`
+* `DOMAIN` - The domain your app is currently residing on
+ * example: `localhost:3000` or `someapp.herokuapp.com`
 * `NODE_ENV` - Environment ('development', 'staging', 'production')
  * example: `development`
 * `CLIENT_API_PATH` - Path to the client REST api (relative)
@@ -72,6 +73,7 @@ Pass information that evaporates when accessed
 #!/bin/sh
 export PORT=3000 \
 export DEBUG="*" \
+export DOMAIN="localhost:3000"
 export NODE_ENV="production" \
 export APPSECRET="somecrazyhash" \
 export CLIENT_API_PATH="/api" \
