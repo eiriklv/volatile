@@ -14,10 +14,10 @@ var ReactAsync = require('react-async');
 var Head = require('./modules/components/head');
 
 // Main page component (this is asyncronous)
-var NotFound = React.createClass({
+var Message = React.createClass({
     mixins: [ReactAsync.Mixin],
 
-    getInitialStateAsync: function (callback) {
+    getInitialStateAsync: function(callback) {
         callback(null, this.props); // set the input props as state (equal to 'return this.props' in getInitialState, but async)
     },
 
@@ -25,14 +25,12 @@ var NotFound = React.createClass({
         return (
             <html>
                 <Head title={this.state.title} description={this.state.description}></Head>
-                <body id="notfound">
+                <body id="landing">
                     <div className="container">
                         <div className="jumbotron text-center">
                             <h1><span className="fa fa-cloud"></span> {this.state.title}</h1>
 
-                            <p>You requested: {this.state.url}</p>
-
-                            <a href="/" className="btn btn-success"><span className="fa fa-user"></span> Go back home</a>
+                            <p>This should be the secret - with a message that it has been deleted!</p>
                         </div>
                     </div>
                 </body>
@@ -41,7 +39,7 @@ var NotFound = React.createClass({
     }
 });
 
-module.exports = NotFound;
+module.exports = Message;
 
 // If the file is processed by the browser, it should mount itself to the document and 'overtake' the markup from the server without rerendering
 if (typeof window !== 'undefined') {
@@ -51,6 +49,6 @@ if (typeof window !== 'undefined') {
     }
 
     window.onload = function() {
-        React.renderComponent(NotFound(), document);
+        React.renderComponent(Message(), document);
     }
 }

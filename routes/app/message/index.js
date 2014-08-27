@@ -3,7 +3,7 @@ exports = module.exports = function(express, middleware, handlers, path) {
 
     router.route(path)
         .all(middleware.isLoggedIn)
-        .get(handlers.landing);
+        .get(handlers.message);
 
     return router;
 };

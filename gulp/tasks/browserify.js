@@ -33,8 +33,12 @@ gulp.task('browserify', function() {
         output: 'home.js',
         destination: './client/public/javascript/'
     }, {
-        input: ['./client/javascript/landing.js'],
-        output: 'landing.js',
+        input: ['./client/javascript/share.js'],
+        output: 'share.js',
+        destination: './client/public/javascript/'
+    }, {
+        input: ['./client/javascript/message.js'],
+        output: 'message.js',
         destination: './client/public/javascript/'
     }, {
         input: ['./client/javascript/404.js'],
