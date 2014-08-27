@@ -1,6 +1,6 @@
-exports = module.exports = function(Comment, helpers) {
+exports = module.exports = function(Message, helpers, config) {
     return {
-        get: require('./get')(Comment, helpers),
-        create: require('./create')(Comment, helpers)
+        get: require('./get')(Message, helpers, config),
+        create: require('./create')(Message, helpers, config)
     };
 };

@@ -45,6 +45,11 @@ var config = module.exports = convict({
             },
             default: 'somesillysecret',
             env: 'APPSECRET'
+        },
+        domain: {
+            doc: 'The domain the server is running on (including subdomain)',
+            default: 'localhost:3000',
+            env: 'DOMAIN'
         }
     },
     client: {

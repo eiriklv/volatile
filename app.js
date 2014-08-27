@@ -33,7 +33,7 @@ var server = http.createServer(app);
 // app modules
 var ipc = require('./modules/ipc')(0);
 var models = require('./models')(mongoose);
-var services = require('./services')(models, helpers);
+var services = require('./services')(models, helpers, config);
 var middleware = require('./middleware')();
 var handlers = require('./handlers')(services, helpers);
 

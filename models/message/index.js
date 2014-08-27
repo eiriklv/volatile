@@ -1,3 +1,5 @@
+var crypto = require('crypto');
+
 exports = module.exports = function(collection, mongoose) {
     var schema = mongoose.Schema({
         hash: {
@@ -11,6 +13,12 @@ exports = module.exports = function(collection, mongoose) {
             required: true
         }
     });
+
+    schema.methods.generateHash = function() {
+        var seed = crypto.randomBytes(20);
+        var currentDate = (new Date()).valueOf().toString();
+        return crypto.createHash('sha1').update(seed + currentDate).digest('hex');
+    };
 
     return mongoose.model(collection, schema);
 };

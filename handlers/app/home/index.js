@@ -12,7 +12,7 @@ exports = module.exports = function(services, helpers) {
             component: Home,
             clientScripts: ['/javascript/home.js'],
             context: context,
-            staticPage: true,
+            staticPage: false,
             callback: function(err, markup) {
                 if (err) return next(err);
                 res.send(markup);

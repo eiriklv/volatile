@@ -1,5 +1,5 @@
-exports = module.exports = function(models, helpers) {
+exports = module.exports = function(models, helpers, config) {
     return {
-        message: require('./message')(models.Message, helpers)
+        message: require('./message')(models.Message, helpers, config)
     };
 };

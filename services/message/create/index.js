@@ -1,15 +1,16 @@
-exports = module.exports = function(Comment, helpers) {
-    return function(body, callback) {
-        if (!body) callback('body missing');
-        console.log(body);
-
-        var comment = new Comment({
-            author: body.author,
-            text: body.text
+exports = module.exports = function(Message, helpers, config) {
+    return function(messageText, callback) {
+        var message = new Message({
+            text: messageText
         });
 
-        comment.save(function(err, product) {
-            callback(err, product);
+        message.hash = message.generateHash();
+
+        message.save(function(err, product) {
+            if (err || !product.hash) return callback(err ? err : 'no hash returned');
+
+            var returnUrl = 'http://' + config.get('server.domain') + '/' + product.hash;
+            callback(null, returnUrl);
         });
     };
 };

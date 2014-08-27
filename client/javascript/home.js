@@ -12,6 +12,7 @@ var ReactAsync = require('react-async');
 
 // custom components
 var Head = require('./modules/components/head');
+var InputForm = require('./modules/components/input-form');
 
 // Main page component (this is asyncronous)
 var Landing = React.createClass({
@@ -29,8 +30,7 @@ var Landing = React.createClass({
                     <div className="container">
                         <div className="jumbotron text-center">
                             <h1><span className="fa fa-cloud"></span> {this.state.title}</h1>
-
-                            <p>Some input field for creating a link for sharing!</p>
+                            <InputForm />
                         </div>
                     </div>
                 </body>

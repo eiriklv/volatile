@@ -30,7 +30,7 @@ var Share = React.createClass({
                         <div className="jumbotron text-center">
                             <h1><span className="fa fa-cloud"></span> {this.state.title}</h1>
 
-                            <p>Here you should have a ready link for sharing!</p>
+                            <p>{this.state.url}</p>
                         </div>
                     </div>
                 </body>

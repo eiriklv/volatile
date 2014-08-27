@@ -30,7 +30,7 @@ var Message = React.createClass({
                         <div className="jumbotron text-center">
                             <h1><span className="fa fa-cloud"></span> {this.state.title}</h1>
 
-                            <p>This should be the secret - with a message that it has been deleted!</p>
+                            <pre>{this.state.message}</pre>
                         </div>
                     </div>
                 </body>

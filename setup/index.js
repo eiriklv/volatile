@@ -98,7 +98,22 @@ module.exports.handleExpressError = function(app, helpers) {
     // handling other errors
     app.use(function(err, req, res, next) {
         console.error(err.stack);
-        res.send(500, 'Something broke!');
+
+        helpers.react.renderMarkupToString({
+            component: notFoundPage,
+            clientScripts: ['/javascript/404.js'],
+            context: {
+                url: req.url,
+                title: 'Something went wrong',
+                descriptions: ''
+            },
+            staticPage: false,
+            callback: function(err, markup) {
+                if (err) return next(err);
+                res.send(markup);
+            }
+        });
+        return;
     });
 };
 
