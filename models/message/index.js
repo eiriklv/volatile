@@ -10,6 +10,12 @@ exports = module.exports = function(collection, mongoose) {
         },
         text: {
             type: String,
+            default: ''
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            expires: 86400,
             required: true
         }
     });
