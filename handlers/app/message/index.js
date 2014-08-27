@@ -5,7 +5,7 @@ var Message = require('../../../client/javascript/message');
 exports = module.exports = function(services, helpers) {
     return function(req, res, next) {
         var context = {
-            title: 'Volatile',
+            title: 'Your volatile message',
             description: 'share secret messages',
         };
 

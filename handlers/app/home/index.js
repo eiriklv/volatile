@@ -4,7 +4,7 @@ var Home = require('../../../client/javascript/home');
 exports = module.exports = function(services, helpers) {
     return function(req, res, next) {
         var context = {
-            title: 'Volatile',
+            title: 'volatile.me',
             description: 'share secret messages',
         };
 
