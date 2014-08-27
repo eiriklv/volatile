@@ -3,7 +3,8 @@ exports = module.exports = function(collection, mongoose) {
         hash: {
             type: String,
             required: true,
-            index: true
+            index: true,
+            unique: true
         },
         text: {
             type: String,
