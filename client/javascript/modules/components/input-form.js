@@ -16,12 +16,12 @@ module.exports = React.createClass({
             <form className="form-horizontal" role="form" method="post" action="/share">
                 <div className="form-group">
                     <div className="">
-                        <textarea className="form-control large-font" rows="3" name="message" id="message" placeholder="Write your volatile message here"></textarea>
+                        <textarea className="form-control large-font" rows="6" name="message" id="message" placeholder="Write your volatile message here"></textarea>
                     </div>
                 </div>
                 <div className="form-group">
                     <div className="">
-                        <button type="submit" className="btn btn-primary btn-lg btn-block">Create</button>
+                        <button type="submit" className="btn btn-primary btn-lg btn-block create-button">Create</button>
                     </div>
                 </div>
             </form>

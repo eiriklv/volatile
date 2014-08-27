@@ -28,8 +28,12 @@ var Landing = React.createClass({
                 <Head title={this.state.title} description={this.state.description}></Head>
                 <body id="landing">
                     <div className="container">
-                        <div className="jumbotron text-center">
-                            <h1><span className="fa fa-cloud"></span> {this.state.title}</h1>
+                        <div className="row jumbotron text-center">
+                            <h1 className="title">
+                                <span className="fa-stack">
+                                    <i className="fa fa-ban fa-stack-2x text-success"></i>
+                                    <i className="fa fa-eye fa-stack-1x"></i>
+                                </span> {this.state.title}</h1>
                             <InputForm />
                         </div>
                     </div>

@@ -28,9 +28,10 @@ var Share = React.createClass({
                 <body id="landing">
                     <div className="container">
                         <div className="jumbotron text-center">
-                            <h1><span className="fa fa-cloud"></span> {this.state.title}</h1>
-
-                            <p>{this.state.url}</p>
+                            <h1 className="title"><span className="fa fa-share"></span> {this.state.title}</h1>
+                            <p>Share this secret message by giving the link to a friend</p>
+                            <p>The message will self-destruct as soon as the receiver opens it!</p>
+                            <input type="text" className="form-control link-field" value={this.state.url} />
                         </div>
                     </div>
                 </body>

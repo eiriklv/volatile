@@ -14,10 +14,10 @@ var ReactAsync = require('react-async');
 var Head = require('./modules/components/head');
 
 // Main page component (this is asyncronous)
-var Message = React.createClass({
+var ErrorPage = React.createClass({
     mixins: [ReactAsync.Mixin],
 
-    getInitialStateAsync: function(callback) {
+    getInitialStateAsync: function (callback) {
         callback(null, this.props); // set the input props as state (equal to 'return this.props' in getInitialState, but async)
     },
 
@@ -25,11 +25,12 @@ var Message = React.createClass({
         return (
             <html>
                 <Head title={this.state.title} description={this.state.description}></Head>
-                <body id="landing">
+                <body id="notfound">
                     <div className="container">
                         <div className="jumbotron text-center">
                             <h1 className="title"><span className="fa fa-cloud"></span> {this.state.title}</h1>
-                            <pre className="text-left message-field">{this.state.message}</pre>
+
+                            <a href="/" className="btn btn-success"><span className="fa fa-user"></span> Go back home</a>
                         </div>
                     </div>
                 </body>
@@ -38,7 +39,7 @@ var Message = React.createClass({
     }
 });
 
-module.exports = Message;
+module.exports = ErrorPage;
 
 // If the file is processed by the browser, it should mount itself to the document and 'overtake' the markup from the server without rerendering
 if (typeof window !== 'undefined') {
@@ -48,6 +49,6 @@ if (typeof window !== 'undefined') {
     }
 
     window.onload = function() {
-        React.renderComponent(Message(), document);
+        React.renderComponent(ErrorPage(), document);
     }
 }

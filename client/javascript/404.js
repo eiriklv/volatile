@@ -28,7 +28,7 @@ var NotFound = React.createClass({
                 <body id="notfound">
                     <div className="container">
                         <div className="jumbotron text-center">
-                            <h1><span className="fa fa-cloud"></span> {this.state.title}</h1>
+                            <h1 className="title"><span className="fa fa-cloud"></span> {this.state.title}</h1>
 
                             <p>You requested: {this.state.url}</p>
 
