@@ -14,6 +14,7 @@ var errorHandler = require('errorhandler');
 // 404 / error handling dependencies
 var nodejsx = require('node-jsx').install();
 var notFoundPage = require('../client/javascript/404');
+var errorPage = require('../client/javascript/error');
 
 // configure express
 module.exports.configureExpress = function(options, app, config) {
@@ -100,11 +101,11 @@ module.exports.handleExpressError = function(app, helpers) {
         console.error(err.stack);
 
         helpers.react.renderMarkupToString({
-            component: notFoundPage,
-            clientScripts: ['/javascript/404.js'],
+            component: errorPage,
+            clientScripts: ['/javascript/error.js'],
             context: {
                 url: req.url,
-                title: 'Something went wrong',
+                title: 'This resource does not exist - or an error occured',
                 descriptions: ''
             },
             staticPage: false,
@@ -114,6 +115,11 @@ module.exports.handleExpressError = function(app, helpers) {
             }
         });
         return;
+    });
+
+    app.use(function(err, req, res, next) {
+        console.error(err.stack);
+        res.send(500, 'Something broke!');
     });
 };
 
