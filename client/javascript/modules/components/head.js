@@ -32,7 +32,7 @@ module.exports = React.createClass({
                 <meta property='og:image' content='/images/facebook-thumbnail.png' />
 
                 <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css' />
-                <link rel='stylesheet' href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' />
+                <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css' />
                 <link rel='stylesheet' href='//cdn.jsdelivr.net/alertify.js/0.3.11/themes/alertify.core.css' />
                 <link rel='stylesheet' href='//cdn.jsdelivr.net/alertify.js/0.3.11/themes/alertify.bootstrap.css' />
                 <link rel='stylesheet' href='/stylesheets/app.css' />

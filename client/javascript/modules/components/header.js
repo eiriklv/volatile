@@ -16,10 +16,12 @@ module.exports = React.createClass({
         return (
             <div className="jumbotron text-center">
                 <h1>
-                    <span className="fa-stack">
-                        <i className="fa fa-ban fa-stack-2x text-success"></i>
-                        <i className="fa fa-eye fa-stack-1x"></i>
-                    </span> {this.props.title}
+                    <a href="/">
+                        <span className="fa-stack">
+                            <i className="fa fa-ban fa-stack-2x text-success"></i>
+                            <i className="fa fa-eye fa-stack-1x"></i>
+                        </span> {this.props.title}
+                    </a>
                 </h1>
             </div>
         );
