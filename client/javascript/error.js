@@ -18,7 +18,7 @@ var ErrorPage = React.createClass({
     mixins: [ReactAsync.Mixin],
 
     getInitialStateAsync: function (callback) {
-        callback(null, this.props); // set the input props as state (equal to 'return this.props' in getInitialState, but async)
+        callback(null, this.props);
     },
 
     render: function() {
@@ -28,9 +28,15 @@ var ErrorPage = React.createClass({
                 <body id="notfound">
                     <div className="container">
                         <div className="jumbotron text-center">
-                            <h1 className="title"><span className="fa fa-cloud"></span> {this.state.title}</h1>
-
-                            <a href="/" className="btn btn-success"><span className="fa fa-user"></span> Go back home</a>
+                            <h1 className="title">
+                                <a className="title-link" href="/">
+                                    <span className="fa-stack">
+                                        <i className="fa fa-ban fa-stack-2x text-success"></i>
+                                        <i className="fa fa-eye fa-stack-1x"></i>
+                                    </span> {this.state.title}
+                                </a>
+                            </h1>
+                            <p>This resource does not exist - or an error occured</p>
                         </div>
                     </div>
                 </body>
@@ -41,9 +47,7 @@ var ErrorPage = React.createClass({
 
 module.exports = ErrorPage;
 
-// If the file is processed by the browser, it should mount itself to the document and 'overtake' the markup from the server without rerendering
 if (typeof window !== 'undefined') {
-    // enable the react developer tools when developing (loads another 450k into the DOM..)
     if (config.environment == 'development') {
         window.React = require('react');
     }

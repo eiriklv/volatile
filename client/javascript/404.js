@@ -18,7 +18,7 @@ var NotFound = React.createClass({
     mixins: [ReactAsync.Mixin],
 
     getInitialStateAsync: function (callback) {
-        callback(null, this.props); // set the input props as state (equal to 'return this.props' in getInitialState, but async)
+        callback(null, this.props);
     },
 
     render: function() {
@@ -43,9 +43,7 @@ var NotFound = React.createClass({
 
 module.exports = NotFound;
 
-// If the file is processed by the browser, it should mount itself to the document and 'overtake' the markup from the server without rerendering
 if (typeof window !== 'undefined') {
-    // enable the react developer tools when developing (loads another 450k into the DOM..)
     if (config.environment == 'development') {
         window.React = require('react');
     }
