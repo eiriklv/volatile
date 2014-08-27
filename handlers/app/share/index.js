@@ -7,7 +7,7 @@ exports = module.exports = function(services, helpers) {
         var message = req.body.message;
 
         var context = {
-            title: 'Share the link below',
+            title: 'volatile.me',
             description: 'share secret messages',
         };
 
