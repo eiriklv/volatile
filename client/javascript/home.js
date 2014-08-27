@@ -33,7 +33,9 @@ var Landing = React.createClass({
                                 <span className="fa-stack">
                                     <i className="fa fa-ban fa-stack-2x text-success"></i>
                                     <i className="fa fa-eye fa-stack-1x"></i>
-                                </span> {this.state.title}</h1>
+                                </span> {this.state.title}
+                            </h1>
+                            <p>Your message will self destruct as soon as it is opened by the receiver, or within 24h if not opened.</p>
                             <InputForm />
                         </div>
                     </div>
