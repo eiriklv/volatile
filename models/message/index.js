@@ -1,7 +1,9 @@
 exports = module.exports = function(collection, mongoose) {
     var schema = mongoose.Schema({
-        author: {
+        hash: {
             type: String,
+            required: true,
+            index: true
         },
         text: {
             type: String,
