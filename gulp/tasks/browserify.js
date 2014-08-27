@@ -44,5 +44,9 @@ gulp.task('browserify', function() {
         input: ['./client/javascript/404.js'],
         output: '404.js',
         destination: './client/public/javascript/'
+    }, {
+        input: ['./client/javascript/error.js'],
+        output: 'error.js',
+        destination: './client/public/javascript/'
     }]);
 });
