@@ -105,7 +105,7 @@ module.exports.handleExpressError = function(app, helpers) {
             clientScripts: ['/javascript/error.js'],
             context: {
                 url: req.url,
-                title: 'This resource does not exist - or an error occured',
+                title: 'volatile.me',
                 descriptions: ''
             },
             staticPage: false,
