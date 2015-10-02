@@ -22,7 +22,7 @@
     "convict": "~0.4.2",
     "validator": "~3.12.0",
     "superagent": "^0.18.0",
-    "mongoose": "~3.8.12",
+    "mongoose": "4.1.x",
     "stylus": "~0.46.3",
     "react": "~0.10.0",
     "react-async": "~0.9.1",
